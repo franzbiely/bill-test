@@ -1,0 +1,53 @@
+#Setup Next.js
+
+npm init -y
+npm i -s react react-dom next
+mkdir pages
+
+Update package.json
+"scripts": {
+  "dev": "next",
+  "build": "next build",
+  "start": "next start"
+}
+
+
+#Install KoaJS
+
+npm i koa koa-router -s
+touch server.js
+
+#server.js sample :
+https://raw.githubusercontent.com/zeit/next.js/master/examples/custom-server-koa/server.js
+
+#Install Material UI
+
+npm install @material-ui/core
+npm install @material-ui/icons
+
+Include in DOM :
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+
+Example usage : 
+import React from 'react'
+import Link from 'next/link'
+import Button from '@material-ui/core/Button';
+
+const App = () => (
+    <Link href="/a"><Button variant="contained" color="primary">
+        Hello World
+    </Button></Link>
+);
+export default App;
+
+#Heroku Deploy
+ heroku login
+ git init
+heroku git:remote -a fma-heroku
+git add .
+git commit ...
+git push heroku master
+
+https://medium.com/@jacoboakley/deploy-a-next-js-app-on-heroku-69bcb01db1b7
